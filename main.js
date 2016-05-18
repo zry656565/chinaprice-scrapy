@@ -8,10 +8,11 @@ let fs = require('fs')
   , request = require('request')
   , baseCurl = fs.readFileSync('./base.sh', 'utf8')
 
-let JAGID = '4075086217'
+let JAGID = '3189160714'
   , isGetting = false
   , remains = []
-  , next = 219
+  , next = 371
+  , total = 2249
   , maxRequest = 5
   , currentRequest = 0
   , targetFile = './data/output.csv'
@@ -99,6 +100,7 @@ function getJAGID(callback) {
 
 // execute curl program
 function execCurl(pNo) {
+  if (pNo > total) return;
   let curl = baseCurl.replace(/\$\{pageNum\}/i, pNo).replace(/\$\{JAGID\}/i, JAGID)
   exec(curl, {encoding: 'buffer'}, (err, buffer, code) => {
       if (err instanceof Error) {
