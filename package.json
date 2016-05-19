@@ -6,8 +6,7 @@
   "dependencies": {
     "bufferhelper": "^0.2.1",
     "exec": "^0.2.1",
-    "iconv-lite": "^0.4.13",
-    "request": "^2.72.0"
+    "iconv-lite": "^0.4.13"
   },
   "devDependencies": {},
   "scripts": {
